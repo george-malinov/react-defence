@@ -26,9 +26,12 @@ const AllHeroes = () => {
       <h1>
         <Badge variant="info">All Heroes</Badge>
       </h1>
-      <br/>
+      <br />
       <div className="text-center border-warning">
-        <section className="d-flex flex-row justify-content-center" style={{ width: "100%" }}>
+        <section
+          className="d-flex flex-row justify-content-center"
+          style={{ width: "100%" }}
+        >
           {heroes.map((hero) => (
             <Card key={hero.id} className="bg-primary ml-2 ml-lg-2 text-dark">
               <Card.Title>{hero.heroName}</Card.Title>
