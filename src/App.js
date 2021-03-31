@@ -1,10 +1,10 @@
-import './App.css';
-import {firebase} from './Firestore/Firestore'
+import "./App.css";
+import AllHeroes from "./components/AllHeroes/AllHeroes";
 
 function App() {
   return (
     <div className="App">
-      
+      <AllHeroes />
     </div>
   );
 }
