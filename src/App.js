@@ -1,11 +1,12 @@
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container} from 'react-bootstrap';
 import AllHeroes from "./components/AllHeroes/AllHeroes";
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <AllHeroes />
-    </div>
+    </Container>
   );
 }
 
