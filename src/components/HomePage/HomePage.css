@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+.home-page {
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.home-page video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+.home-page p {
+  font-size: 50px;
+  line-height: 113%;
+  font-family: "New Tegomin";
+  letter-spacing: 5px;
+  font-weight: 600;
+  color: #ffffffee;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px #000000;
+}

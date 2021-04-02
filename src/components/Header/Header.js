@@ -5,7 +5,8 @@ const Header = () => {
     <header>
       <nav className="navbar">
         <div className="navbar--link">
-          <Link className="navbar--link-item" to="/">Dota2 Heroes</Link>
+          <Link className="navbar--link-item" to="/">DOTA 2</Link>
+          <Link className="navbar--link-item" to="/all">HEROES</Link>
         </div>
         <div className="navbar--link">
           <Link className="navbar--link-item" to="/all">
