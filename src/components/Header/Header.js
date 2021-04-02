@@ -5,15 +5,19 @@ const Header = () => {
     <header>
       <nav className="navbar">
         <div className="navbar--link">
-          <Link className="navbar--link-item" to="/">DOTA 2</Link>
-          <Link className="navbar--link-item" to="/all">HEROES</Link>
+          <Link className="navbar--link-item" to="/">
+            DOTA 2
+          </Link>
+          <Link className="navbar--link-item" to="/all">
+            HEROES
+          </Link>
         </div>
         <div className="navbar--link">
-          <Link className="navbar--link-item" to="/all">
-            All Heroes
+          <Link className="navbar--link-item" to="/signup">
+            Sign Up
           </Link>
-          <Link className="navbar--link-item" to="/">
-            Home
+          <Link className="navbar--link-item" to="/login">
+            Log In
           </Link>
         </div>
       </nav>
