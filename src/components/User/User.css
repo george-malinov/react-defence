@@ -1,0 +1,13 @@
+.user-box {
+  color: white;
+  text-align: center;
+}
+
+.form-control{
+    text-align: center;
+}
+
+button{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
