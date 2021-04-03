@@ -22,3 +22,36 @@
   border-radius: 10px;
   color: white;
 }
+.navbar--link-item:hover {
+  background-color: orangered;
+  text-decoration: none;
+  border: 2px solid white;
+  color: white;
+}
+
+.active{
+  background-color:orangered;
+}
+
+.logoutbutton {
+  background: transparent;
+}
+
+.welcome-user {
+  border: 3px solid;
+  padding: 20px;
+  position: relative;
+  right: 35px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.welcome-guest {
+  border: 3px solid;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 20px;
+}

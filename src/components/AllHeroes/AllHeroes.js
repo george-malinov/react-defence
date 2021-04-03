@@ -1,6 +1,8 @@
+import { Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../Firestore/firebase";
 import { Card, Badge } from "react-bootstrap";
+import { useAuth } from "../../Context/AuthContext";
 
 function GetAllHeroes() {
   const [heroes, setHeroes] = useState([]);
@@ -19,32 +21,37 @@ function GetAllHeroes() {
 }
 
 const AllHeroes = () => {
-  const heroes = GetAllHeroes();
+  const { currentUser } = useAuth();
+  if (currentUser) {
+    const heroes = GetAllHeroes();
 
-  return (
-    <div className="text-center text-light">
-      <h1>
-        <Badge variant="info">All Heroes</Badge>
-      </h1>
-      <br />
-      <div className="text-center border-warning">
-        <section
-          className="d-flex flex-row justify-content-center"
-          style={{ width: "100%" }}
-        >
-          {heroes.map((hero) => (
-            <Card key={hero.id} className="bg-primary ml-2 ml-lg-2 text-dark">
-              <Card.Title>{hero.heroName}</Card.Title>
-              <Card.Img
-                src={hero.heroImageURL}
-                style={{ width: "90px", height: "90px", cursor: "pointer" }}
-              />
-            </Card>
-          ))}
-        </section>
+    return (
+      <div className="text-center text-light">
+        <h1>
+          <Badge variant="info">All Heroes</Badge>
+        </h1>
+        <br />
+        <div className="text-center border-warning">
+          <section
+            className="d-flex flex-row justify-content-center"
+            style={{ width: "100%" }}
+          >
+            {heroes.map((hero) => (
+              <Card key={hero.id} className="bg-primary ml-2 ml-lg-2 text-dark">
+                <Card.Title>{hero.heroName}</Card.Title>
+                <Card.Img
+                  src={hero.heroImageURL}
+                  style={{ width: "90px", height: "90px", cursor: "pointer" }}
+                />
+              </Card>
+            ))}
+          </section>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <Redirect from="/all" to="/login"></Redirect>;
+  }
 };
 
 export default AllHeroes;
