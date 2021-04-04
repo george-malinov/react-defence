@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./User.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 
 const SignUp = ({ history }) => {
@@ -10,6 +10,7 @@ const SignUp = ({ history }) => {
   const { signUp } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  const { currentUser } = useAuth();
 
   async function signUpHandle(e) {
     e.preventDefault();
@@ -31,7 +32,9 @@ const SignUp = ({ history }) => {
     }
     setLoading(false);
   }
-
+  if (currentUser) {
+    return <Redirect exact to="/" />;
+  }
   return (
     <>
       <form onSubmit={signUpHandle} className="col-md-4 offset-4 user-box">

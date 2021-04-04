@@ -1,14 +1,16 @@
 import { useRef, useState } from "react";
 import "./User.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 
-const LogIn = ({ history }) => {
+const LogIn = () => {
   let emailRef = useRef();
   let passwordRef = useRef();
   const { logIn } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  const { currentUser } = useAuth();
 
   function logInHandle(e) {
     e.preventDefault();
@@ -17,10 +19,8 @@ const LogIn = ({ history }) => {
       setError("");
       setLoading(true);
       logIn(emailRef.current.value, passwordRef.current.value).then(() => {
-        history.push("/all");
+        history.push("/");
       });
-      emailRef = "";
-      passwordRef = "";
     } catch (err) {
       if (err.message === "The email address is badly formatted.") {
         setError("Invalid email! Please try again.");
@@ -38,7 +38,9 @@ const LogIn = ({ history }) => {
     }
     setLoading(false);
   }
-
+  if (currentUser) {
+    return <Redirect exact to="/" />;
+  }
   return (
     <form onSubmit={logInHandle} className="col-md-4 offset-4 user-box">
       <h3>Log in</h3>

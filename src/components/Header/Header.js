@@ -1,22 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import "./Header.css";
 import { useAuth } from "../../Context/AuthContext";
 const Header = () => {
   const { currentUser, logOut } = useAuth();
-  async function logOutHandle(e) {
+  const history = useHistory();
+  function logOutHandle(e) {
     e.preventDefault();
-    await logOut();
+    logOut();
+    history.push("/");
   }
 
   return (
     <header>
       <nav className="navbar">
         <div className="navbar--link">
-          <NavLink className="navbar--link-item" to="/home">
+          <NavLink className="navbar--link-item" to="/">
             DOTA 2
-          </NavLink>
-          <NavLink className="navbar--link-item" to="/all">
-            HEROES
           </NavLink>
         </div>
         {currentUser && (

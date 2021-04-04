@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Container className="wrapper">
           <Switch>
-            <Route path="/home" exact component={HomePage} />
+            <Route path="/" exact component={HomePage} />
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={LogIn} />
             <Route path="/all" exact component={AllHeroes} />
