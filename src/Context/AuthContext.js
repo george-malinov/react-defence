@@ -10,14 +10,12 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  function signUp(email, password) {
-    return auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCred) => {
-        db.collection("users").doc(userCred.user.uid).set({
-          email: email,
-        });
-      });
+  async function signUp(email, password) {
+    const userCred = await auth
+      .createUserWithEmailAndPassword(email, password);
+    db.collection("users").doc(userCred.user.uid).set({
+      email: email,
+    });
   }
 
   function logIn(email, password) {

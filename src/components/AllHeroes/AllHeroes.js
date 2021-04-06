@@ -1,21 +1,23 @@
 import { Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../Firestore/firebase";
-import { Card, Badge } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
+import HeroCard from "./HeroCard";
+import "./AllHeroes.css";
 
 function GetAllHeroes() {
   const [heroes, setHeroes] = useState([]);
 
   useEffect(() => {
-    db.collection("heroes").onSnapshot((snapshot) => {
+    const unsubscribe = db.collection("heroes").onSnapshot((snapshot) => {
       const newHeroes = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-
       setHeroes(newHeroes);
     });
+    return () => unsubscribe();
   }, []);
   return heroes;
 }
@@ -23,8 +25,9 @@ function GetAllHeroes() {
 const AllHeroes = () => {
   const { currentUser } = useAuth();
   const heroes = GetAllHeroes();
-  if(!currentUser){
-    return <Redirect exact to="/"></Redirect>
+  console.log(heroes);
+  if (!currentUser) {
+    return <Redirect exact to="/"></Redirect>;
   }
   return (
     <div className="text-center text-light">
@@ -38,13 +41,7 @@ const AllHeroes = () => {
           style={{ width: "100%" }}
         >
           {heroes.map((hero) => (
-            <Card key={hero.id} className="bg-primary ml-2 ml-lg-2 text-dark">
-              <Card.Title>{hero.heroName}</Card.Title>
-              <Card.Img
-                src={hero.heroImageURL}
-                style={{ width: "90px", height: "90px", cursor: "pointer" }}
-              />
-            </Card>
+            <HeroCard key={hero.id} {...hero} />
           ))}
         </section>
       </div>

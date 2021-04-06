@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { AuthProvider } from "./Context/AuthContext";
 import "./App.css";
 import AllHeroes from "./components/AllHeroes/AllHeroes";
+import SingleHero from "./components/SingleHero/SingleHero";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
@@ -18,9 +19,10 @@ function App() {
         <Container className="wrapper">
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={LogIn} />
+            <Route path="/signup" exact component={SignUp} />
+            <Route path="/login" exact component={LogIn} />
             <Route path="/all" exact component={AllHeroes} />
+            <Route path="/:heroId" exact component={SingleHero} />
           </Switch>
         </Container>
         <Footer />

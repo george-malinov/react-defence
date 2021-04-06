@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import "./User.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 
-const SignUp = ({ history }) => {
+const SignUp = () => {
   let emailRef = useRef();
   let passwordRef = useRef();
   let confirmPasswordRef = useRef();
@@ -11,6 +11,7 @@ const SignUp = ({ history }) => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth();
+  const history = useHistory();
 
   async function signUpHandle(e) {
     e.preventDefault();
@@ -24,9 +25,6 @@ const SignUp = ({ history }) => {
       setLoading(true);
       await signUp(emailRef.current.value, passwordRef.current.value);
       history.push("/login");
-      emailRef = "";
-      passwordRef = "";
-      confirmPasswordRef = "";
     } catch (err) {
       setError(err.message);
     }
