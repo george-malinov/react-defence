@@ -6,26 +6,20 @@ import { useAuth } from "../../Context/AuthContext";
 import HeroCard from "./HeroCard";
 import "./AllHeroes.css";
 
-function GetAllHeroes() {
+const AllHeroes = () => {
   const [heroes, setHeroes] = useState([]);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
-    const unsubscribe = db.collection("heroes").onSnapshot((snapshot) => {
+    db.collection("heroes").onSnapshot((snapshot) => {
       const newHeroes = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setHeroes(newHeroes);
     });
-    return () => unsubscribe();
   }, []);
-  return heroes;
-}
 
-const AllHeroes = () => {
-  const { currentUser } = useAuth();
-  const heroes = GetAllHeroes();
-  console.log(heroes);
   if (!currentUser) {
     return <Redirect exact to="/"></Redirect>;
   }

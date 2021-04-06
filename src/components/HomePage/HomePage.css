@@ -22,6 +22,7 @@
 
 .info-message {
   font-size: 50px;
+  text-align: center;
   line-height: 113%;
   font-family: "New Tegomin";
   letter-spacing: 5px;
@@ -32,7 +33,7 @@
 }
 
 .login-message{
-  font-size: 50px;
+  font-size: 56px;
   line-height: 113%;
   font-family: "New Tegomin";
   letter-spacing: 5px;
@@ -41,9 +42,17 @@
   text-transform: uppercase;
   text-shadow: 0px 0px 20px #000000;
   margin-top: 100px;
-  margin-left: 500px;
+}
+
+.messages{
+  display: flex;
+  text-align: center;
 }
 
 .login-btn{
-  color: orangered;
+  color: orangered;  
+}
+.login-btn:hover{
+  text-decoration: none;
+  color: rgb(0, 255, 115);
 }

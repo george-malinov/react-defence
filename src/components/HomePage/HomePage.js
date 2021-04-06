@@ -19,13 +19,20 @@ const HomePage = () => {
         </p>
       )}
       {currentUser && (
-        <p className="login-message">
-          Now you can explore the{" "}
-          <Link to="/all" className="login-btn">
-            HEROES
-          </Link>{" "}
-          of the game!
-        </p>
+        <div className="messages">
+          <p className="login-message">
+            Now you can explore all of the heroes{" "}
+            <Link to="/all" className="login-btn">
+              HERE !
+            </Link>
+          </p>
+          <p className="login-message">
+            Or you can create your custom hero{" "}
+            <Link to="/create" className="login-btn">
+              HERE !
+            </Link>
+          </p>
+        </div>
       )}
     </div>
   );

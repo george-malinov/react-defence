@@ -1,12 +1,11 @@
 .current-hero {
   color: white;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
 }
-.current-hero img {
-  width: 300px;
-  height: 350px;
+.heroImg {
+  width: 100px;
+  height: 100px;
   border-radius: 40%;
 }
 
@@ -22,7 +21,7 @@
 .description {
   width: 98%;
   max-height: 100%;
-  height: 160px;
+  height: 250px;
   min-height: 0;
   color: #dddddd;
   font-weight: lighter;
@@ -47,17 +46,56 @@
   margin-top: 20px;
 }
 
+.spells-wrapper {
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 70%;
+}
+.spells-wrapper h4 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+  line-height: 40px;
+}
+
 .hero-spells {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
   color: white;
-  height: 200px;
-  font-size: 10px;
+  height: 100px;
+  width: fit-content;
+  font-size: 13px;
+  margin: 20px 0 0 20px;
 }
 .spellImg {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 10%;
 }
 
+.spell-info {
+  margin: 0;
+}
+
+.backBtn {
+  left: 240px;
+  color: white;
+  text-align: center;
+  width: 50%;
+  background: transparent;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 1px solid white;
+  position: relative;
+}
+
+.backBtn:hover {
+  background-color: orangered;
+  text-decoration: none;
+  color: white;
+}
