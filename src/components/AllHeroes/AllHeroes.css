@@ -1,0 +1,8 @@
+.heroes {
+  padding: 3px;
+  transition: transform 0.2s;
+}
+
+.heroes:hover {
+  transform: scale(1.1);
+}
