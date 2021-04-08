@@ -1,0 +1,60 @@
+
+
+.section-title {
+  display: flex;
+  color: white;
+}
+
+.hero-title {
+  position: relative;
+  left: 155px;
+}
+.spells-title {
+  position: relative;
+  left: 600px;
+}
+
+.create-hero {
+  color: white;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.spells-info {
+  display: flex;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.create-button {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    width: 300px;
+    left: 400px
+}
+
+.create-button:hover{
+    background: orangered;
+}

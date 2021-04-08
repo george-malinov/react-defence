@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <video type="vide/mp4" src={video} autoPlay={true} loop={true}></video>
-      <p className="info-message">"A MODERN MULTIPLAYER MASTERPIECE"</p>
+      <p className="info-message">"A MODERN MULTIPLAYER MASTERPIECE"</p>      
       {!currentUser && (
         <p className="login-message">
           Please{" "}
