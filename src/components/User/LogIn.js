@@ -35,6 +35,9 @@ const LogIn = () => {
       ) {
         setError("No such user! Please register.");
       }
+      else{
+        setError(err.message)
+      }
     }
     setLoading(false);
   }

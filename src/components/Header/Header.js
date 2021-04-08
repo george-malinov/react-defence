@@ -17,6 +17,11 @@ const Header = () => {
           <NavLink className="navbar--link-item" to="/">
             DOTA 2
           </NavLink>
+          {currentUser && (
+            <NavLink className="navbar--link-item" to="/myHeroes">
+              My Heroes
+            </NavLink>
+          )}
         </div>
         {currentUser && (
           <p className="welcome-user">Welcome {currentUser.email} !</p>

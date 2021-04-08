@@ -72,11 +72,13 @@ class GetSingleHero extends React.Component {
                 </div>
               ))
             ) : (
-              <p>hahaha</p>
+              <p>Loading</p>
             )}
           </div>
         </div>
-        <Link to="/all" type="button" className="backBtn">BACK</Link>
+        <Link to="/all" type="button" className="backBtn">
+          BACK
+        </Link>
       </div>
     );
   }

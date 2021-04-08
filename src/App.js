@@ -11,6 +11,7 @@ import HomePage from "./components/HomePage/HomePage";
 import SignUp from "./components/User/SignUp";
 import LogIn from "./components/User/LogIn";
 import Create from "./components/Create/Create";
+import MyHeroes from "./components/MyHeroes/MyHeroes";
 
 function App() {
   return (
@@ -22,8 +23,9 @@ function App() {
             <Route path="/" exact component={HomePage} />
             <Route path="/signup" exact component={SignUp} />
             <Route path="/login" exact component={LogIn} />
-            <Route path="/create" exact component={Create}/>
+            <Route path="/create" exact component={Create} />
             <Route path="/all" exact component={AllHeroes} />
+            <Route path="/myHeroes" exact component={MyHeroes} />
             <Route path="/:heroId" exact component={GetSingleHero} />
           </Switch>
         </Container>
