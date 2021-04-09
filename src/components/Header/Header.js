@@ -39,6 +39,11 @@ const Header = () => {
             </NavLink>
           )}
           {currentUser && (
+            <NavLink className="navbar--link-item" to="/all">
+              ALL HEROES
+            </NavLink>
+          )}
+          {currentUser && (
             <form onSubmit={logOutHandle}>
               <button className="navbar--link-item logoutbutton">
                 LOG OUT

@@ -12,6 +12,7 @@ import SignUp from "./components/User/SignUp";
 import LogIn from "./components/User/LogIn";
 import Create from "./components/Create/Create";
 import MyHeroes from "./components/MyHeroes/MyHeroes";
+import Edit from "./components/Edit/Edit";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/all" exact component={AllHeroes} />
             <Route path="/myHeroes" exact component={MyHeroes} />
             <Route path="/:heroId" exact component={GetSingleHero} />
+            <Route path="/:heroId/edit" exact component={Edit} />
           </Switch>
         </Container>
         <Footer />
