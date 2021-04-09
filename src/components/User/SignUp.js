@@ -37,7 +37,7 @@ const SignUp = () => {
     <>
       <form onSubmit={signUpHandle} className="col-md-4 offset-4 user-box">
         <h3>Sign Up</h3>
-        {error && <p className="alert">{error}</p>}
+        {error && <p className="alert-login">{error}</p>}
         <div className="form-group">
           <label>Email</label>
           <input
