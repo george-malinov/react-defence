@@ -1,0 +1,29 @@
+.edit-hero {
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.edit-hero h3 {
+  padding: 40px;
+  border: 1px solid;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  margin: 0 0 20px 310px;
+}
+
+.save {
+  color: white;
+  border: 1px solid;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 20px;
+  width: 200px;
+  background: transparent;
+}
+
+.save:hover {
+  background: rgb(77, 255, 32);
+}

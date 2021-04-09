@@ -12,15 +12,17 @@ const LogIn = () => {
   const history = useHistory();
   const { currentUser } = useAuth();
 
-  function logInHandle(e) {
+  async function logInHandle(e) {
     e.preventDefault();
 
     try {
       setError("");
       setLoading(true);
-      logIn(emailRef.current.value, passwordRef.current.value).then(() => {
-        history.push("/");
-      });
+      await logIn(emailRef.current.value, passwordRef.current.value).then(
+        () => {
+          history.push("/");
+        }
+      );
     } catch (err) {
       if (err.message === "The email address is badly formatted.") {
         setError("Invalid email! Please try again.");
@@ -34,9 +36,8 @@ const LogIn = () => {
         "There is no user record corresponding to this identifier. The user may have been deleted."
       ) {
         setError("No such user! Please register.");
-      }
-      else{
-        setError(err.message)
+      } else {
+        setError(err.message);
       }
     }
     setLoading(false);
