@@ -1,6 +1,10 @@
 .hero-card {
   display: flex;
   flex-direction: column;
+  margin: 20px;
+}
+h1 {
+  padding: 20px;
 }
 
 .delete {
@@ -13,6 +17,10 @@
   position: relative;
   left: 10px;
   top: 5px;
+}
+.delete:hover {
+  text-decoration: none;
+  background: rgb(102, 255, 0);
 }
 
 .edit {
@@ -40,14 +48,15 @@
 .heroes:hover {
   transform: scale(1.1);
 }
-.Create-hero-link{
-  color:white;
+.Create-hero-link {
+  color: white;
   border: 2px solid;
   padding: 5px;
   border-radius: 15px;
+  font-size: 20px;
 }
 
-.Create-hero-link:hover{
+.Create-hero-link:hover {
   background-color: orangered;
   text-decoration: none;
   color: wheat;

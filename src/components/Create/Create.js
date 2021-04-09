@@ -1,11 +1,22 @@
 import "./Create.css";
 import { useAuth } from "../../Context/AuthContext";
 import { db } from "../../Firestore/firebase";
+import { Redirect } from "react-router-dom";
+import { useState } from "react";
 const Create = ({ history }) => {
   const user = useAuth();
+  const [error, setError] = useState("");
 
   const createSubmitHandler = (e) => {
     e.preventDefault();
+
+    if (e.target.heroName.value.length > 20) {
+      return setError("Hero name should be with max of 20 characters!");
+    }
+
+    if (e.target.heroDescription.value.length > 2000) {
+      return setError("Hero Description should be with max of 2000 characters!");
+    }
 
     var spellNames = Array.from(e.target.spellName).map((spell) => spell.value);
     var spellCds = Array.from(e.target.spellCd).map((spell) => spell.value);
@@ -61,10 +72,13 @@ const Create = ({ history }) => {
         history.push("/all");
       });
   };
-
+  if (!user.currentUser) {
+    return <Redirect exact to="/"></Redirect>;
+  }
   return (
     <>
       <h2>Create Custom Hero</h2>
+      {error && <p className="alert">{error}</p>}
       <div className="section-title">
         <h4 className="hero-title">Hero</h4>
         <h4 className="spells-title">Spells</h4>
