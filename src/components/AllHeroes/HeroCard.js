@@ -7,7 +7,7 @@ const HeroCard = ({ id, heroName, heroImageURL }) => {
       <Link to={id}>
         <Card.Img
           src={heroImageURL}
-          style={{ width: "90px", height: "90px", cursor: "pointer" }}
+          style={{ width: "60%", cursor: "pointer" }}
         />
       </Link>
     </Card>
